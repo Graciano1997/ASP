@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/HelloAsp.bundle.scp.css"
     },
     {
+      "Id": "/home/grasoft/Desktop/ASP/HelloAsp/wwwroot/App_Data/Persons.txt",
+      "PackagePath": "staticwebassets/App_Data/Persons.txt"
+    },
+    {
       "Id": "/home/grasoft/Desktop/ASP/HelloAsp/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },

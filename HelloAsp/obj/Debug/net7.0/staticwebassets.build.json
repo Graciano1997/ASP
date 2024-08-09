@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "C+/HKEGR+ktQhDPdITbG3Wa/QDHxaJgwCDv0kBQrccQ=",
+  "Hash": "QkzjA+bpqW4drXEV/GVj8YG6bmlvyFjJmZLsz59FB84=",
   "Source": "HelloAsp",
   "BasePath": "_content/HelloAsp",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/home/grasoft/Desktop/ASP/HelloAsp/obj/Debug/net7.0/scopedcss/projectbundle/HelloAsp.bundle.scp.css"
+    },
+    {
+      "Identity": "/home/grasoft/Desktop/ASP/HelloAsp/wwwroot/App_Data/Persons.txt",
+      "SourceId": "HelloAsp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/grasoft/Desktop/ASP/HelloAsp/wwwroot/",
+      "BasePath": "_content/HelloAsp",
+      "RelativePath": "App_Data/Persons.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/App_Data/Persons.txt"
     },
     {
       "Identity": "/home/grasoft/Desktop/ASP/HelloAsp/wwwroot/css/site.css",

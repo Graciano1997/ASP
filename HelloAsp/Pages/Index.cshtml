@@ -2,7 +2,7 @@
 @model IndexModel
 @{
     string message=" Hello Graciano Henrique";
-    ViewData["Title"] = "My Home Page";
+    ViewData["Title"] = "Home";
 }
 
 <div class="text-center">
@@ -25,5 +25,22 @@
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
         }
+
+        <section>
+              @if (Model.UserData != null && Model.UserData.Length > 0){
+        <ul>
+            @foreach (var line in Model.UserData)
+            {
+                foreach(string dataItem in line.Split(',')){
+                <li>@dataItem</li>
+                }
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No user data found.</p>
+    }
+        </section>
     
 </div>
