@@ -9,4 +9,21 @@
     <h1 class="display-4">Welcome</h1>
     <h1>@message</h1>
     <p>The time is @DateTime.Now</p>
+    
+        @if(Request.Method == "POST"){
+            string companyName=Request.Form["CompanyName"];
+            string contactName=Request.Form["ContactName"];
+            <p>You Entered the following info:</p>
+            <p>Company Name: @companyName</p>
+            <p>Company Contact: @contactName</p>
+        }else{
+            <form method="POST" action="">
+                <input type="text" name="CompanyName" class="form-control" placeholder="The company name" />
+                <br>
+                <input type="text" name="ContactName" class="form-control" placeholder="The contact name"/>
+                <br>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        }
+    
 </div>
