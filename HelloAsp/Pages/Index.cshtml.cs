@@ -17,21 +17,25 @@ public IndexModel(IWebHostEnvironment environment, ILogger<IndexModel> logger)
             _logger = logger;
         }
 
-     public string[] UserData { get; private set; }
+     public string[] UserContacts { get; private set; }
 
     public void OnGet()
     {
-        var dataFilePath = Path.Combine(_environment.WebRootPath, "App_Data", "Persons.txt");
-
+        var dataFilePath = Path.Combine(_environment.WebRootPath, "App_Data", "ContactsBase.txt");
         // Read the file
         if (System.IO.File.Exists(dataFilePath))
         {
-            UserData = System.IO.File.ReadAllLines(dataFilePath);
-            
+            UserContacts = System.IO.File.ReadAllLines(dataFilePath);
+
         } else
         {
         _logger.LogWarning($"File not found: {dataFilePath}");
         }
 
+    }
+
+    public void OnPost(){
+        _logger.LogInformation("The Contact name is {ContactName}",owner);
+        // Console.WriteLine($"The Contact name is {ContactName}");
     }
 }
