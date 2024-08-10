@@ -7,7 +7,7 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <h1>Your Asp List Of Contacts</h1>
+    <h5>Your Asp List Of Contacts</h5>
     <p>The time is @DateTime.Now</p>
     
         @* @if(Request.Method == "POST"){
@@ -20,7 +20,7 @@
             <form method="POST" action="">
                 <label>
                     <p><span class="text-danger">*</span>Name</p>
-                <input type="text" name="owner" class="form-control" placeholder="Graciano" />
+                <input type="text" name="Owner" class="form-control" placeholder="Graciano" />
                 </label>
                 <label>
                     <p><span class="text-danger">*</span>Number</p>
@@ -28,18 +28,27 @@
                 </label>
                 <button type="submit" class="btn btn-primary">Save</button>
             </form>
+            @if(Model.Status=="ok"){
+                <p class="text-success">Created Successfully!</p>
+            } else if(Model.Status=="error") {
+                <p class="text-danger">An Error Occured </p>
+            }
         @* } *@
 
 <br>
 <hr>
         <section class="mt-3">
               @if (Model.UserContacts != null && Model.UserContacts.Length > 0){
-        <ul>
+    
             @foreach (var line in Model.UserContacts)
             {
-                <li>@line</li>
+                <div class="mt-1" style="display: flex; justify-content: space-between;  ">
+                @foreach(string item in line.Split(',')){
+                    <p class="p-2 ">@item</p>
+                }
+                </div>
+                <hr>
             }
-        </ul>
     }
     else
     {

@@ -18,9 +18,17 @@ public IndexModel(IWebHostEnvironment environment, ILogger<IndexModel> logger)
         }
 
      public string[] UserContacts { get; private set; }
+    
+    [BindProperty]
+    public string Owner { get; set; }
+
+    [BindProperty]
+    public string ContactNumber{get;set;}    
+    public string Status{get;set;}
 
     public void OnGet()
     {
+        Status="pending";
         var dataFilePath = Path.Combine(_environment.WebRootPath, "App_Data", "ContactsBase.txt");
         // Read the file
         if (System.IO.File.Exists(dataFilePath))
@@ -35,7 +43,20 @@ public IndexModel(IWebHostEnvironment environment, ILogger<IndexModel> logger)
     }
 
     public void OnPost(){
-        _logger.LogInformation("The Contact name is {ContactName}",owner);
-        // Console.WriteLine($"The Contact name is {ContactName}");
+        // _logger.LogInformation($"The Contact name is {Owner} and the Number is {ContactNumber}");
+        var dataFilePath = Path.Combine(_environment.WebRootPath, "App_Data", "ContactsBase.txt");
+        // Read the file
+
+        string contact=$"{Owner},{ContactNumber}";
+
+        if (System.IO.File.Exists(dataFilePath))
+        {
+            System.IO.File.AppendAllText(dataFilePath,contact + Environment.NewLine);
+            Status="ok";
+        } else
+        {
+        Status="error";
+        _logger.LogWarning($"File not found: {dataFilePath}");
+        }
     }
 }
