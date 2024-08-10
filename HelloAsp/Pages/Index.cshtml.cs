@@ -53,6 +53,7 @@ public IndexModel(IWebHostEnvironment environment, ILogger<IndexModel> logger)
         {
             System.IO.File.AppendAllText(dataFilePath,contact + Environment.NewLine);
             Status="ok";
+            UserContacts = System.IO.File.ReadAllLines(dataFilePath);
         } else
         {
         Status="error";

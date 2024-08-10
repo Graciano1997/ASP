@@ -46,6 +46,11 @@
                 @foreach(string item in line.Split(',')){
                     <p class="p-2 ">@item</p>
                 }
+                
+                <div style="display: flex; gap: 10px;"> 
+                 <a class="btn btn-outline-danger" href="#delete"> Delete</a>
+                <a class="btn btn-outline-secondary" href="#delete">Edit</a>
+                </div>
                 </div>
                 <hr>
             }
